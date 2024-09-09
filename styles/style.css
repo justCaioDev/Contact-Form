@@ -1,0 +1,239 @@
+@font-face {
+    font-family: 'Karla';
+    src: url(../assets/fonts/Karla-VariableFont_wght.ttf);
+}
+
+@keyframes popUp {
+    0% {
+        bottom: 0;
+        opacity: 0;
+    }
+    100% {
+        bottom: 20px;
+        opacity: 1;
+    }
+}
+
+:root {
+    --primary-bg: #dff1e7;
+    --secondary-bg: #ffffff;
+    --btn-color: #0c7d69;
+
+    --error-color: #d73c3c;
+
+    --primary-text: #2b4246;
+    --secondary-text: #87a3a6;
+
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Karla', sans-serif;
+    width: 100%;
+    height: 100vh;
+    background-color: var(--primary-bg);
+}
+
+main {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-block: 100px;
+}
+
+main .form-container {
+    width: 100%;
+    max-width: 1000px;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.369);
+    background-color: var(--secondary-bg);
+}
+
+.contact-title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 40px;
+    color: var(--primary-text);
+}
+
+.contact-form {
+    display: grid;
+    grid-template-areas: 
+    'first-name last-name'
+    'email email'
+    'query-type query-type'
+    'message message'
+    'consent consent'
+    'buttom buttom';
+    row-gap: 40px;
+    column-gap: 20px;
+}
+
+.first-name-box {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    grid-area: first-name;
+}
+
+.last-name-box {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    grid-area: last-name;
+}
+
+.email-box {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    grid-area: email;
+}
+
+.query-type-box {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    grid-area: query-type;
+}
+
+.query-type-options {
+    display: flex;
+    gap: 20px;
+}
+
+.query-type-options .general-enquiry-box, .query-type-options .support-request-box {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    
+    padding: 20px;
+    border: 1px solid var(--primary-text);
+    border-radius: 10px;
+}
+
+.general-enquiry-input::after, .support-request-input::after {
+    content: '';
+}
+
+.message-box {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    grid-area: message;
+}
+
+.consent-box {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    grid-area: consent;
+}
+
+.form-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    grid-area: buttom;
+    height: 60px;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 700;
+    border: none;
+    color: white;
+    background-color: var(--btn-color);
+}
+
+.form-btn:hover {
+    background-color: #0e977e;
+    cursor: pointer;
+}
+
+label {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--primary-text);
+}
+
+label::after, .query-type-title::after {
+    content: '*';
+    color: var(--btn-color);
+    padding-inline-start: 10px;
+}
+
+.first-name-box input,
+ .last-name-box input,
+  .email-box input {
+    height: 60px;
+    border-radius: 10px;
+    border: 1px solid var(--primary-text);
+    padding-inline: 15px;
+    font-size: 16px;
+    color: var(--secondary-text);
+}
+
+.message-box input {
+    height: 100px;
+    border-radius: 10px;
+    border: 1px solid var(--primary-text);
+    padding: 15px;
+    font-size: 16px;
+    color: var(--secondary-text);
+}
+
+.support-request-box input,
+ .general-enquiry-box input, .consent-box input {
+    width: 20px;
+    height: 20px;
+    border: 1px solid var(--primary-text);
+}
+
+input:focus {
+    outline: 2px solid var(--btn-color);
+}
+
+.toast {
+    display: none;
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    background-color: var(--btn-color);
+    padding: 15px 40px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.405);
+    color: var(--secondary-bg);
+    animation: popUp .4s forwards ease-out;
+}
+
+@media screen and (max-width: 780px) {
+    
+    main {
+        padding: 60px 20px;
+    }
+
+    .contact-form {
+        grid-template-areas: 
+        'first-name'
+        'last-name'
+        'email'
+        'query-type'
+        'message'
+        'consent'
+        'buttom';
+    }
+
+    .query-type-options {
+        flex-direction: column;
+    }
+
+}
+

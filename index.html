@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Contact form</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <link rel="stylesheet" href="styles/style.css">
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+  <script src="scripts/script.js" defer></script>
+</head>
+<body>
+
+  <main>
+    <section class="form-container">
+      <h1 class="contact-title">Contact Us</h1>
+      <form id="form" class="contact-form">
+        <div class="first-name-box">
+          <label for="first-name" class="first-name-input">First Name</label>
+          <input id="first-name" type="text" autocomplete="off"  >
+        </div>
+        <!-- This field is required -->
+        <div class="last-name-box">
+          <label for="last-name" class="last-name-input">Last Name</label>
+          <input id="last-name" name="last-name" type="text" autocomplete="off">
+        </div>
+        <!-- This field is required -->
+        <div class="email-box">
+          <label for="email" class="email-input">Email Address</label>
+          <input id="email" type="email" autocomplete="off">
+        </div>
+        <!-- Please enter a valid email address -->
+        <!-- This field is required -->
+        <div class="query-type-box">
+          <p class="query-type-title">Query Type</p>
+          <div class="query-type-options">
+            <div id="general-enquiry-box" class="general-enquiry-box">
+              <input id="general-enquiry" name="query-type" type="radio" >
+              <label for="general-enquiry" class="general-enquiry-input">General Enquiry</label>
+            </div>
+            <div id="support-request-box" class="support-request-box">
+              <input id="support-request" name="query-type" type="radio">
+              <label for="support-request" class="support-request-input">Support Request</label>
+            </div>
+          </div>
+        </div>
+        <!-- Please select a query type -->
+        <div class="message-box">
+          <label for="message" class="message-input">Message</label>
+          <input id="message" type="text" autocomplete="off">
+        </div>
+        <!-- This field is required -->
+        <div class="consent-box">
+          <input id="consent" type="checkbox">
+          <label id="consent-label" for="consent" class="consent-input">I consent to being contacted by the team</label>
+        </div>
+        <!-- To submit this form, please consent to being contacted -->
+        <button class="form-btn" type="submit">Submit</button>
+        <!-- Message Sent!
+        Thanks for completing the form. We'll be in touch soon! -->
+    
+      </form>
+    </section>
+  </main>
+
+  <div id="toast" class="toast">
+    <span id="toast-message" class="toast-message">Sucesso!</span>
+  </div>
+  
+  <div class="attribution">
+    <p>
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
+      Coded by <a href="https://www.github.com/justCaioDev">Caio Azevedo</a>.
+    </p>
+  </div>
+</body>
+</html>
